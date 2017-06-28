@@ -1,0 +1,24 @@
+<div ng-app="myApp" ng-controller="BlogController as ctrl" style="background:url(lib/image/list_blog1.jpg) repeat;">
+     
+     <h2 style="color:maroon; align:centre; font:italic; font:bold; font-family:Maiandra GD; font-size:50px; text-align:center;">Blog Created</h2>
+      
+      <div class="content">
+        <div class="container">
+          <div class="row" >
+        
+            <ul class="post-grid"  >
+           
+          <li ng-repeat="blog in ctrl.blogs" class="col-s-4"  ng-class="{ 'reset-s' : $index%3==0 }"  >
+            <a ng-href="#/viewBlog" ng-click="ctrl.getSelectedBlog(blog.blog_id)" style="margin-top: 20px;padding-top: 20px;font-size: 30px;font:bold;color: blue;">
+            <b>{{blog.blogTitle}}</b>
+            
+             </a><br>
+            <cite style="color:black;font:bold;"><b>Posted By:{{blog.username}}</b></cite><br><br><br>
+            <p style="color:black;">{{blog.description | limitTo:70}}...</p>
+            <a ng-href="#/viewBlog" ng-click="ctrl.getSelectedBlog(blog.blog_id)">Read More</a><br><br>
+          </li>
+        </ul>
+       </div>
+        </div>    
+    </div>
+  </div>

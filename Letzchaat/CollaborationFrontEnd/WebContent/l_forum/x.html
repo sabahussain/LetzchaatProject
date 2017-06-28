@@ -1,0 +1,29 @@
+ <div class="comments" ng-controller="ForumCommentController as commentctrl">
+          <br>    <h3 style="color: black;text-decoration:underline;font: bold;font-size: 20px;font-style: normal;text-transform: uppercase;float:center;">Comments</h3><br><br>
+        
+           
+          <div style="display: block;padding: 10px;">
+              <ul style="color:black;font: bold;font-size: 15px;font-style: normal;">
+               <li ng-repeat="value in fetchComments1">
+               <div style="border: inset;padding: 20px;margin: 10px;">
+                <div style="padding:10px;">
+                 <p style="color:orange ;font-size: 18px;"><b>{{value.username}}</b></p>
+                 <p style="color:black ;font-size: 13px;"><b> {{value.comment_date |date}}</b></p>
+                 </div>
+                 <div>
+                 <p style="color: black;font-size: 15px;"> {{value.forum_comment}}<p>
+               </div>
+               </div>
+               </li>
+              </ul><br><br>
+             </div>
+              <form name="commentForm" ng-submit="commentForm.$valid && commentctrl.submit(selectedforum.forum_id)" novalidate>
+              
+                
+                <h3 style="color: black;font: bold;font-size: 20px;font-style: normal;text-transform: uppercase;">Add Comment</h3>
+                  <br><textarea ng-model="commentctrl.forumcomment.forum_comment" cols="30" rows="10" required></textarea>
+               
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+        </div>

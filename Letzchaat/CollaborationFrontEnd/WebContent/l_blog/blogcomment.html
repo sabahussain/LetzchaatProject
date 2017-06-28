@@ -1,0 +1,33 @@
+ 
+            <div class="comments" ng-controller="BlogCommentController as commentctrl" style="background:url(lib/image/comment_back.jpg) repeat;">
+             
+          <br>    
+		  
+		  <h3 style="color: maroon;font-family:Maiandra GD; font: bold;font-size: 30px; text-align:center;">COMMENTS</h3><br><br>
+          <div style="display: block;padding: 10px;border: thin;">
+              <ul style="color:black;font: bold;font-size: 15px;font-style: normal;">
+               <li ng-repeat="value in fetchComments1">
+                <div style="text-align: center;">
+                 <p style="color:brown ;font-size: 20px;"><b>{{value.username}}</b></p>
+                 <p style="color: black;font-size: 20px;"> {{value.comments}}<p><br>
+               </div>
+               </li>
+              </ul><br><br>
+             </div>
+              <form name="commentForm" ng-submit="commentctrl.submit(selectedBlog.blog_id)" novalidate>
+            
+                <h3 style="color: black;font: bold;font-size: 20px;font-style: normal; text-align:center; font-family:Maiandra GD; text-transform: uppercase;">Add a Comment</h3>
+                
+                  
+				  
+				  
+				  
+				  <br>
+                  <div style="text-align:center;"><textarea ng-model="commentctrl.blogcomment.comments" cols="30" rows="10" required></textarea>
+                             <br><br>
+                             </div>
+          <div class="container" align="center">
+         		<input type="submit" class="btn btn-primary btn-block" style="width: 400px; align:center;" value="Submit" />
+               </div>
+                </form>
+            </div>

@@ -1,0 +1,113 @@
+
+
+	<div class="generic-container" ng-app="myApp" ng-controller="UserController as ctrl">
+ 
+   
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span class="lead" style="font: bold;font-size: 30px;color:black;">My Profile </span>
+				</div>
+				<div class="formcontainer">
+					<form ng-submit="ctrl.update()" name="myForm"
+						class="form-horizontal">
+						
+						
+						
+						<div class="row">
+							<div class="form-group col-md-8">
+								<div class="col-md-2" >
+									<img src="images/{{currentUser.username}}.jpg" alt="Profile Picture" style="width=10px ;height=15px;" >
+								</div>
+							</div>
+						</div>
+						
+
+							<div class="row">
+							<div class="form-group col-md-8">
+								<label class="col-md-2 control-lable" for="id" style="font: bold;font-size: 20px;color:black;">UserName</label>  
+								<div class="col-md-5">
+									<!-- <input type="text"  value= {{currentUser.username}}  ng-bind="ctrl.user.username" id="username"
+										class="username form-control input-sm"
+										placeholder="Enter your UserName" required ng-minlength="3" /> -->
+										<label style="font: bold;font-size: 20px;color:black;">{{currentUser.username}}</label>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="form-group col-md-9">
+								<label class="col-md-2 control-lable" for="name" style="font: bold;font-size: 20px;color:black;">Name</label>
+								<div class="col-md-7">
+									<!-- <input type="text"  value= {{currentUser.name}}  ng-model="ctrl.user.name" id="name"
+										class="username form-control input-sm"
+										placeholder="Enter your name" required ng-minlength="3" /> -->
+										<label style="font: bold;font-size: 20px;color:black;">{{currentUser.name}}</label>
+								</div>
+							</div>
+						</div>
+
+						
+
+
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="email" style="font: bold;font-size: 20px;color:black;">Email</label>
+								<div class="col-md-7">
+									<!-- <input type="email" value= {{currentUser.email}} ng-model="ctrl.user.email" id="email"
+										class="email form-control input-sm"
+										placeholder="Enter your Email" required /> -->
+										<label style="font: bold;font-size: 20px;color:black;">{{currentUser.email}}</label>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="mobilel" style="font: bold;font-size: 20px;color:black;">Mobile</label>
+								<div class="col-md-7">
+									<!-- <input type="tel" value= {{currentUser.mobile}} ng-model="ctrl.user.mobile" id="mobile"
+										class="mobile form-control input-sm"
+										placeholder="Enter your contact number" required /> -->
+										<label style="font: bold;font-size: 20px;color:black;">{{currentUser.mobile}}</label>
+
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="address" style="font: bold;font-size: 20px;color:black;">Address</label>
+								<div class="col-md-7">
+									<!-- <input type="text"  value= {{currentUser.address}}  width="100" height="50"
+									  
+										ng-model="ctrl.user.address" id="address"
+										class="form-control input-sm"
+										placeholder="Enter your Address." /> -->
+										<label style="font: bold;font-size: 20px;color:black;">{{currentUser.address}}</label>
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="row">
+							<div class="form-actions floatRight">
+								<input type="submit" value="Update"
+									class="btn btn-primary btn-sm">
+								
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+		   
+	
+
+
+

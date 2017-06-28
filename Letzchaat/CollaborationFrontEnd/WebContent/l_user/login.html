@@ -1,0 +1,46 @@
+
+
+
+
+
+<div ng-app="myApp"  style="background:url(lib/image/registeration.jpg) repeat;" >
+
+<div class="container"  ng-controller="UserController as ctrl" style="max-width: 80%;height:80%; align:center;" >
+    <h2 style="color:maroon; font:italic; font:bold; font-family:Maiandra GD; font-size:50px; text-align: center;" >LOGIN </h2>
+    
+    <form name="form" method="post"  ng-submit="ctrl.login()">
+    
+    <!-- style="max-width: 80%;height:80%;padding: 10px; background-color: #ffffff; margin: 0 auto; border-radius:0.3em;" -->
+
+    <div class="omb_login" style="background:url(lib/image/registeration.jpg) repeat;">
+    	
+	
+
+	
+		<div class="row omb_row-sm-offset-3" style="background:url(lib/image/registeration.jpg) repeat;">
+			<div class="col-xs-12 col-sm-12" style="background:url(lib/image/registeration.jpg) repeat;">	
+			    <form class="omb_loginForm" action="" autocomplete="off" method="POST" >
+					<div class="input-group" >
+						<span class="input-group-addon"><i class="fa fa-user"></i></span>
+						
+						<input type="text" class="form-control" name="username" ng-model="ctrl.user.username" placeholder="User Name" required="required">
+						
+					</div>
+					<span class="help-block"></span>
+										
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+						<input  type="password" class="form-control" name="password" placeholder="Password" ng-model="ctrl.user.password" required="required">
+					</div>
+                    <span class="help-block"></span>
+
+					<input type="submit" value="LOGIN" style="width: 300px; margin: 0 auto; " class="btn btn-lg btn-primary btn-block">
+				</form>
+			</div>
+    	</div>
+	  	
+	</div>
+</form>
+</div>
+</div>
+  

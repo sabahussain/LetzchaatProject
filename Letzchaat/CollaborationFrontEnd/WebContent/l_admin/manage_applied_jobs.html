@@ -1,0 +1,62 @@
+<div class="container" style="position: relative;font-size: 20px;width:100%; background:url(lib/image/admin_manage.jpg) repeat;">
+<div ng-show="!loggedIn">
+<div class="alert alert-danger fade in">
+      You are not logged in.. Please login &nbsp; <a href="#/login"> here</a>
+        &nbsp; to Create a blog
+         </div>       
+
+</div>
+
+<div ng-show="loggedIn">
+<h2 style="color:maroon; font:italic; font:bold; font-family:Maiandra GD; font-size:50px; text-align: center;">Job Details</h2>
+	<br>
+<div ng-show="role=='Admin'">
+	<table id="search" class="table table-hover table-condensed">
+    				<thead>
+						<tr>
+							<th style="width:10%">UserName</th>
+							<th style="width:10%">JobId</th>
+							
+							<th style="width:10%" class="text-center">Status</th>
+							
+							<th style="width:10%" class="text-center">Reason</th>
+							<th style="width:10%" class="text-center">DateApplied</th>
+							<th style="width:13%"></th>
+							<th style="width:13%"></th>
+							<th style="width:13%"></th>
+						</tr>
+					</thead>
+					<tbody ng-app="myApp" ng-controller="JobController as ctrl">
+						<tr ng-repeat="AllAppliedJob in AllAppliedJobs" >
+							<td data-th="UserName">
+								{{AllAppliedJob.username}}
+							</td>
+							
+							<td data-th="JobId">
+								{{AllAppliedJob.jobid}}
+							</td>
+							<td data-th="Status" class="text-center">{{AllAppliedJob.status}}</td>
+							
+							<td data-th="Reason" class="text-center">{{AllAppliedJob.remarks}}</td>
+							<td data-th="IsOnline" class="text-center">{{AllAppliedJob.date_applied|date}}</td>
+							<td class="actions" data-th="">
+								
+								<a href="#" ng-click="ctrl.callForInterview(AllAppliedJob.username,AllAppliedJob.jobid)">Call for Interview</a>								
+							</td>
+							<td class="actions" data-th="">
+							
+								<a href="#" ng-click="ctrl.rejectJob(AllAppliedJob.username,AllAppliedJob.jobid)">Reject</a>								
+							</td>
+							
+							<td class="actions" data-th="">
+							
+								<a href="#" ng-click="ctrl.selectUser(AllAppliedJob.username,AllAppliedJob.jobid)">Select User</a>								
+							</td>
+							
+						</tr>
+					</tbody>
+					
+				</table>
+			<!-- 	</div> -->
+				</div>
+</div>

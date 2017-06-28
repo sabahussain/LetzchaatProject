@@ -1,0 +1,22 @@
+<div ng-app="myApp" ng-controller="BlogController as ctrl" style=" align: center; text-align:center; background:url(lib/image/list_blog1.jpg) repeat;">
+<h2 style="color:maroon; align:centre; font:italic; font:bold; font-family:Maiandra GD; font-size:50px; text-align:center;">Details</h2>
+<br><div class="post" >
+          <div>
+            
+            <h3 style="font:bold; font-size:20px; color: Chartreuse; font-family:Maiandra GD;">Blog Name: {{selectedBlog.blogTitle}}</h3><br><br>
+           
+            <cite style="font:bold; color:black;font-family:Maiandra GD; ">Posted By : {{selectedBlog.username}} on {{selectedBlog.date_of_creation | date}}</cite><br><br><br>
+            <div class="post-body" style="color:black;">
+             <p style="font-family:Maiandra GD;">
+             About Blog:  {{selectedBlog.description}}
+             </p> <br> 
+            </div>
+             <div class="comments" ng-controller="BlogCommentController as commentctrl">
+             <br>  
+             <a ng-href="#/blogcomment" ng-click="commentctrl.fetchAllBlogsCommentNew(selectedBlog.blog_id)" style="font-family:Maiandra GD; color:red;">VIEW COMMENTS</a>  
+            </div>
+        </div>
+      </div>
+        
+ </div>
+           

@@ -1,0 +1,38 @@
+
+    
+	<div class="container" ng-app="myApp" ng-controller="ForumController as ctrl" align="center" style="color:white;font: bold; background:url(lib/image/forum.jpg) repeat;">
+	
+<div ng-show="!loggedIn">
+<div class="alert alert-danger fade in">
+      You are not logged in.. Please &nbsp; <a href="#/login">Login</a>
+        &nbsp; to Create a Forum
+         </div><br><br>
+         
+         <div class="alert alert-danger fade in">
+            Or you can Register yourself by clicking <a href="#/registration">here</a>
+            </div>
+
+</div>
+
+<div ng-show="loggedIn">
+<h2 style="color:yellow; font:italic; font:bold; font-family:Maiandra GD; font-size:50px;">Create Forum</h2><br><br><br>
+	<form ng-submit="ctrl.submit()" method="get">   
+<div class="form-group" style="font-size:30px; color:navy;">
+<input type="text" class="form control" id="forum_topic" ng-model="ctrl.forum.forum_topic" name="forum_topic" placeholder="Enter Forum Topic"/><br>
+</div><br><br>
+        
+    
+<div class="form-group" style="font-size:30px; color:navy;">
+<input type="text" class="form control" id="forum_question" ng-model="ctrl.forum.forum_question" name="forum_question" placeholder="Enter Your Question"/><br>
+</div><br><br>
+
+<div class="form-group">
+<input type="submit" class="btn btn-success green" value="Create Forum" style="font-size:20px;"/> 
+</div>
+						</form>
+        </div>
+    </div>
+    </div>
+    
+     
+   

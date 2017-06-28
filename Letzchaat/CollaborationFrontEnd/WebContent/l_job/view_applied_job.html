@@ -1,0 +1,63 @@
+<div class="container" ng-app="myApp" ng-controller="JobController as ctrl" style="position: relative;font-size: 20px;width:100%; background:url(lib/image/post_job.jpg) repeat;">
+<div ng-show="!loggedIn">
+<div class="alert alert-danger fade in">
+      You are not logged in.. Please login &nbsp; <a href="#/login"> here</a>
+        &nbsp; to view Applied Jobs
+         </div>
+         
+         <div>
+            If you are not  register , you can register <a href="#/registration">here</a>
+            </div>
+
+</div>
+
+<div ng-show="loggedIn"  >
+	<div class="row">
+		<h2 style="font:italic; font:bold; font-family:Maiandra GD;">Search Job</h2>
+           <div id="custom-search-input">
+                            <div class="input-group col-md-6">
+                                <input type="text" class="search-query form-control" placeholder="Search" ng-model="searchString" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+	</div>
+	
+	<h1 style="color:maroon; font:italic; font:bold; font-family:Maiandra GD; font-size:50px; text-align: center;">Applied Jobs</h1>
+	
+	<div ng-repeat="job in getAppliedJob | filter:searchString">
+	<section class="featured-jobs">
+    <div class="container">
+    
+		<div class="center-block"></div>
+		<div class="row">
+
+				
+				<div class="col-sm-6 col-md-4">
+					
+						<div class="thumbnail" style="font-size: 5px;">
+								<p style="font-size: 15px;color:black;font:bold">Job Id:  {{job.jobid}}</p> 
+								<a href="#/viewJobdetails" class="btn btn-primary" role="button" ng-click="ctrl.getJobDetails(job.jobid)"><span class="glyphicon glyphicon-file"></span> View Details</a>
+								<a href="" class="feature-link"><h3 style="font:italic; font:bold; font-family:Maiandra GD; font-size:20px;">{{job.job_title}}</h3></a>
+								<p style="font-size: 15px;color:black;">Qualification: {{job.qualification}}</p>
+								<span class="meta" style="font-size: 15px;color:black;">Posted on: {{job.date_time|date}}</span>
+								
+						
+						</div>
+					
+				</div>
+
+			
+
+			</div>
+		
+	</div>
+</section>
+	
+	</div>
+	</div>
+	
+</div>

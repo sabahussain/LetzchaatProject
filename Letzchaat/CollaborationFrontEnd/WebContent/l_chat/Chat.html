@@ -1,0 +1,39 @@
+<div id="myDiv" style="background:url(lib/image/chat.png);background-repeat: no-repeat; background-size: cover;
+    background-position: center center;">
+<body ng-app="myApp">
+<h3 style="color:orange; font:italic; font:bold; font-family:Maiandra GD; font-size:50px; text-align: center;">Let's Have A Talk!</h3>
+
+
+
+<p>
+<p>
+<p>
+<p>
+<p>
+<div ng-controller="ChatController" class="container">
+<p>
+<p>
+<p>
+<p>
+<p>
+<form ng-submit="addMessage()" name="messageForm">
+ <input type="text" placeholder="Compose a new message..." ng-model="message" />
+   <div class="info">
+     <span class="count" ng-bind="max - message.length" ng-class="{danger: message.length > max}" style="color:orange;">140</span>
+     <br><br>
+       <button ng-disabled=" message.length == 0">send</button>
+       </div>
+      </form><!-- message.length > max || -->
+     <hr />
+     
+       <div class="container" style="color:yellow;">
+     <p ng-repeat="message in messages | orderBy: 'time':true" class="message">
+   
+     {{message.name}} at
+       <time>{{message.time | date: 'HH:mm'}} : </time>
+         <span ng-class="{self: message.self}">{{message.message}}</span>
+         </p>
+         </div>
+         </div>
+         </body>
+</div>           

@@ -1,0 +1,26 @@
+<div class="container" ng-app="myApp" ng-controller="ForumController as ctrl" style=" align: center; text-align:center; background:url(lib/image/registeration.jpg) repeat;">
+<h2 style="color:maroon; align:centre; font:italic; font:bold; font-family:Maiandra GD; font-size:50px; text-align:center;">Details</h2>
+<br>
+<div class="post" >
+          <div>
+            
+            <h3 style="font:bold; font-size:20px; color: navy; font-family:Maiandra GD;">{{selectedforum.forum_topic}}</h3>
+           <br><br>
+            <cite style="font:bold; color:black;font-family:Maiandra GD;">Posted By {{selectedforum.username}} on {{selectedforum.date_created | date}}</cite><br><br><br>
+            <div class="post-body" style="color:black; font-family:Maiandra GD;">
+             <p>
+               {{selectedforum.forum_question}}
+             </p> 
+            
+            </div>
+   
+           <div class="comments" ng-controller="ForumCommentController as commentctrl">
+             
+             <br>
+                  <a style="font-family:Maiandra GD;" ng-href="#/forumcomment" ng-click="commentctrl.fetchAllForumsCommentNew(selectedforum.forum_id)">VIEW COMMENTS</a>  
+             </div>    
+            </div>
+        </div> 
+      </div>
+        
+       

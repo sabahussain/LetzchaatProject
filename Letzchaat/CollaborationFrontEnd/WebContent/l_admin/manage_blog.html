@@ -1,0 +1,49 @@
+<div class="container" style="position: relative;font-size: 20px;width:100%; background:url(lib/image/admin_manage.jpg) repeat;" >
+<div ng-show="!loggedIn">
+<div class="alert alert-danger fade in">
+      You are not logged in.. Please login &nbsp; <a href="#/login"> here</a>
+        &nbsp; to Manage Users
+         </div>
+</div>
+<div ng-show="loggedIn">
+<h2 style="color:maroon; font:italic; font:bold; font-family:Maiandra GD; font-size:50px; text-align: center;">Blog Details</h2>
+	<br>
+<div ng-show="role=='Admin'">
+	<table id="search" class="table table-hover table-condensed">
+    				<thead>
+						<tr>
+							<th style="width:20%">BLOG TITLE</th>
+							<th style="width:20%">DESCRIPTION</th>
+							<th style="width:20%">DATE OF CREATION</th>
+							<th style="width:20%">STATUS</th>
+							<th style="width:20%" class="text-center">CREATED BY</th>
+						</tr>
+					</thead>
+					<tbody ng-app="myApp" ng-controller="BlogController as ctrl">
+						<tr ng-repeat="blog in ctrl.blogs" >
+							<td data-th="TITLE">
+								{{blog.blogTitle}}
+							</td>
+							<td data-th="description" >{{blog.description}}</td>
+							<td data-th="date">{{blog.date_of_creation | date}}
+								
+							</td>
+							<td data-th="status" class="text-center">{{blog.status}}</td>
+							<td data-th="Username" class="text-center">{{blog.username}}</td>
+					
+							<td class="actions" data-th="">
+								
+								<a href="#" ng-click="ctrl.accept(blog.blog_id)">Accept</a>								
+							</td>
+							<td class="actions" data-th="">
+							
+								<a href="#" ng-click="ctrl.reject(blog.blog_id)">Reject</a>								
+							</td>
+							
+						</tr>
+					</tbody>
+					
+				</table>
+				</div>
+				</div>
+</div>
